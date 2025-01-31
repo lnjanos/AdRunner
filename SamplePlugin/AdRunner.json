@@ -1,0 +1,26 @@
+{
+    "Author": "kcuY",
+    "Name": "AdRunner",
+    "Punchline": "Automatically runs your Ads.",
+    "Description": "Automatically runs your Ads.",
+    "Tags": [
+        "Ads",
+        "Automation",
+        "AdRunner",
+        "Runner"
+    ],
+    "InternalName": "AdRunner",
+    "AssemblyVersion": "0.0.0.1",
+    "TestingAssemblyVersion": "0.0.0.1",
+    "RepoUrl": "https://github.com/lnjanos/adrunner/",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 11,
+    "TestingDalamudApiLevel": 11,
+    "IsHide": "False",
+    "IsTestingExclusive": "False",
+    "DownloadCount": 5
+    //"DownloadLinkInstall": "https://github.com/lnjanos/crystalsync/releases/download/Release/1.2.0.1.zip",
+    //"DownloadLinkUpdate": "https://github.com/lnjanos/crystalsync/releases/download/Release/1.2.0.1.zip",
+    //"DownloadLinkTesting": "https://github.com/lnjanos/crystalsync/releases/download/Release/1.1.0.9.zip",
+    //"IconUrl": "https://raw.githubusercontent.com/lnjanos/crystalsync/refs/heads/main/icon.png"
+}
