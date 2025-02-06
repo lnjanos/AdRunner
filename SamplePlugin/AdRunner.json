@@ -18,9 +18,9 @@
     "TestingDalamudApiLevel": 11,
     "IsHide": "False",
     "IsTestingExclusive": "False",
-    "DownloadCount": 5
-    //"DownloadLinkInstall": "https://github.com/lnjanos/crystalsync/releases/download/Release/1.2.0.1.zip",
-    //"DownloadLinkUpdate": "https://github.com/lnjanos/crystalsync/releases/download/Release/1.2.0.1.zip",
-    //"DownloadLinkTesting": "https://github.com/lnjanos/crystalsync/releases/download/Release/1.1.0.9.zip",
-    //"IconUrl": "https://raw.githubusercontent.com/lnjanos/crystalsync/refs/heads/main/icon.png"
+    "DownloadCount": 5,
+    "DownloadLinkInstall": "https://github.com/lnjanos/adrunner/releases/download/Release/1.0.0.0.zip",
+    "DownloadLinkUpdate": "https://github.com/lnjanos/adrunner/releases/download/Release/1.0.0.0.zip",
+    "DownloadLinkTesting": "https://github.com/lnjanos/adrunner/releases/download/Release/1.0.0.0.zip",
+    "IconUrl": "https://raw.githubusercontent.com/lnjanos/crystalsync/refs/heads/main/icon.png"
 }

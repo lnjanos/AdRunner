@@ -6,6 +6,10 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using AdRunner.Windows;
 using ECommons;
+using Lumina.Excel;
+using Lumina.Excel.Sheets;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace AdRunner;
 
@@ -28,6 +32,8 @@ public sealed class Plugin : IDalamudPlugin
     private ConfigWindow ConfigWindow { get; init; }
     private MainWindow MainWindow { get; init; }
 
+    public Dictionary<string, uint> Aetherytes { get; private set; } = new();
+
     public Plugin()
     {
         Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
@@ -49,6 +55,8 @@ public sealed class Plugin : IDalamudPlugin
             HelpMessage = "Alias for /adrunner"
         });
 
+        LoadAeths();
+
         PluginInterface.UiBuilder.Draw += DrawUI;
 
         // This adds a button to the plugin installer entry of this plugin which allows
@@ -62,6 +70,30 @@ public sealed class Plugin : IDalamudPlugin
         // Use /xllog to open the log window in-game
         // Example Output: 00:57:54.959 | INF | [AdRunner] ===A cool log message from Sample Plugin===
         Log.Information($"===A cool log message from {PluginInterface.Manifest.Name}===");
+    }
+
+    public void LoadAeths()
+    {
+        ExcelSheet<Aetheryte> aethSheet = DataManager.GetExcelSheet<Aetheryte>(null, null);
+
+        if (aethSheet == null)
+        {
+            return;
+        }
+
+        foreach (Aetheryte aeth in aethSheet)
+        {
+            if (!aeth.PlaceName.ValueNullable.HasValue || !aeth.IsAetheryte)
+                continue;
+
+            uint rowId = aeth.RowId;
+            string aethName = aeth.PlaceName.Value.NameNoArticle.ExtractText().ToLower() ?? "N/A";
+
+            Aetherytes[aethName] = rowId;
+
+
+
+        }
     }
 
     public void Dispose()
@@ -83,6 +115,11 @@ public sealed class Plugin : IDalamudPlugin
     public IChatGui GetChatGui()
     {
         return ChatGui;
+    }
+
+    public IClientState GetClientState()
+    {
+        return ClientState;
     }
 
     private void DrawUI() => WindowSystem.Draw();
